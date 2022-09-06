@@ -157,14 +157,10 @@ header .container {
   position: relative;
 }
 header .logo {
-color: var(--main-color);
-font-size:26px;
-font-weight:bold;
 height:72px;
 display:flex;
 justify-content: center;
 align-items: center;
-transition: var(--main-transition) ease;
 }
 @media(max-width:767px){
   header .logo {
@@ -172,26 +168,22 @@ transition: var(--main-transition) ease;
 margin-bottom: 5px;
 }
 }
-header .logo:hover{
-  color: var(--main-color-alt);
-  font-size: 27px;
-  transition: var(--main-transition)ease;
-}
 header .logo img{
-  margin:auto;
-  height: 50px;  
+  height: 100%;
 }
-header .logo img:hover{
-height: 55px;
-border-top: 4px solid var(--main-color);
-transition: var(--main-transition);
-}
+
 @media(max-width:767px){
+  header .logo img{
+    height: 35px;
+    margin-top: 16px;
+  }
   header .logo{
     width: 100%;
     height: 22px;
   }
 }
+
+
 header .nav{
   display: flex;
 
@@ -201,12 +193,6 @@ header .nav{
     margin: auto;
   }
 }
-header .nav > li:hover .mega-menu{
-  opacity: 1;
-  z-index: 100;
-  top: calc(100% + 1px);
-}
-
 header .nav > li > a{
   display: flex;
   justify-content: center;
@@ -220,9 +206,9 @@ header .nav > li > a{
 }
 @media(max-width:767px){
   header .nav > li > a{
-    padding: 12px;
-    font-size: 20px;
-    height: 70px;
+    padding:0 18px 0 0px;
+    font-size: 18px;
+    height: 40px;
   }
 }
 
@@ -282,14 +268,15 @@ header .nav >li > a:hover::before {
   .Home .text h1{
     font-size: 40px;
     margin: 0;
-    letter-spacing: -2px;
+    letter-spacing: 2px;
+    line-height: 2;
   }
   
     @media(max-width:991px)
   {
     .Home .text h1{
       font-size: 28px;
-      letter-spacing: -1.5px;
+      letter-spacing: 1.5px;
     }
   }
   @media(max-width:767px){
@@ -304,6 +291,7 @@ header .nav >li > a:hover::before {
     color: rgb(119, 119, 119);
     margin: 5px 0 0;
     max-width: 900px;
+    line-height: 2;
   }
   @media(max-width:991px){
     .Home .text p
@@ -347,11 +335,13 @@ header .nav >li > a:hover::before {
   }
   .Home .icon{
     font-size: 50px;
+    line-height: 2;
   }
   .Home .icon a{
     color: #1787e0;
     padding-left: 25px;
     transition: 0.3s ease;
+    line-height: 2;
   }
   .Home .icon a:hover {
     color:#458bc4;
@@ -410,6 +400,33 @@ header .nav >li > a:hover::before {
 }
 /*End Servicesy*/
 
+/*    StRT   products     */
+.products{
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.products .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+.products .box-products .img img{
+  transition: 0.5s;
+  height: 350px;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.422);
+}
+.products .box-products:hover img{
+  transform: rotate(1deg) scale(1.1);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.196);
+}
+
+/*    eND products    */
+
+
 /* Start galler*/
 
 .galler{
@@ -425,6 +442,8 @@ header .nav >li > a:hover::before {
 }
 .galler .box-galry .img img{
   transition: 0.5s;
+  height: 350px;
+  width: 100%;
   max-width: 100%;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.422);
 }
